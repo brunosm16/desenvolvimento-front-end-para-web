@@ -1,0 +1,257 @@
+/* 
+ * CSS de Acessibilidade - WCAG 2.1 AA
+ * Experiência Prática IV
+ */
+
+/* Skip Link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #000;
+    color: #fff;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 1000;
+    border-radius: 4px;
+}
+
+.skip-link:focus {
+    top: 6px;
+}
+
+/* Controles de Acessibilidade */
+.accessibility-toolbar {
+    background: #f8f9fa;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #dee2e6;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.accessibility-toolbar button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.accessibility-toolbar button:hover,
+.accessibility-toolbar button:focus {
+    background: #0056b3;
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+/* Classe para leitores de tela */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Focus visível para navegação por teclado */
+*:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+a:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+/* Modo Escuro */
+.dark-mode {
+    background: #1a1a1a;
+    color: #e0e0e0;
+}
+
+.dark-mode .main-header {
+    background: #2d2d2d;
+}
+
+.dark-mode .nav-menu a {
+    color: #e0e0e0;
+}
+
+.dark-mode .nav-menu a:hover {
+    background: #404040;
+}
+
+.dark-mode .hero-section {
+    background: linear-gradient(135deg, #2d2d2d, #1a1a1a);
+}
+
+.dark-mode .card,
+.dark-mode .form-container {
+    background: #2d2d2d;
+    color: #e0e0e0;
+    border-color: #404040;
+}
+
+.dark-mode input,
+.dark-mode select,
+.dark-mode textarea {
+    background: #404040;
+    color: #e0e0e0;
+    border-color: #666;
+}
+
+.dark-mode .btn-primary {
+    background: #0d6efd;
+}
+
+.dark-mode .btn-primary:hover {
+    background: #0b5ed7;
+}
+
+.dark-mode .footer {
+    background: #2d2d2d;
+    color: #e0e0e0;
+}
+
+.dark-mode .accessibility-toolbar {
+    background: #2d2d2d;
+    border-color: #404040;
+}
+
+/* Alto Contraste */
+.high-contrast {
+    filter: contrast(150%) brightness(110%);
+}
+
+.high-contrast * {
+    text-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.high-contrast a {
+    text-decoration: underline !important;
+}
+
+.high-contrast button,
+.high-contrast .btn {
+    border: 2px solid #000 !important;
+}
+
+.high-contrast .card {
+    border: 2px solid #000 !important;
+}
+
+/* Melhorar contraste de cores (4.5:1 mínimo) */
+.text-muted {
+    color: #495057 !important; /* Contraste 4.5:1 */
+}
+
+.btn-secondary {
+    background-color: #495057;
+    border-color: #495057;
+}
+
+.btn-light {
+    background-color: #e9ecef;
+    border-color: #e9ecef;
+    color: #212529;
+}
+
+/* Indicadores de foco melhorados */
+.nav-menu a:focus,
+.dropdown-menu a:focus {
+    background: #007bff;
+    color: white;
+    outline: 2px solid #fff;
+    outline-offset: -2px;
+}
+
+/* Melhorar legibilidade dos formulários */
+label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+    font-size: 16px; /* Evita zoom no mobile */
+    line-height: 1.5;
+    padding: 8px 12px;
+}
+
+/* Estados de erro mais visíveis */
+.error {
+    color: #dc3545;
+    font-weight: 600;
+    border: 2px solid #dc3545 !important;
+}
+
+/* Melhorar visibilidade de placeholders */
+::placeholder {
+    color: #6c757d;
+    opacity: 1;
+}
+
+/* Responsive para controles de acessibilidade */
+@media (max-width: 768px) {
+    .accessibility-toolbar {
+        padding: 8px;
+    }
+    
+    .accessibility-toolbar button {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+}
+
+/* Animações respeitosas */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Melhor contraste para links */
+a {
+    color: #0d6efd;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    color: #0a58ca;
+    text-decoration: underline;
+}
+
+.dark-mode a {
+    color: #6ea8fe;
+}
+
+.dark-mode a:hover,
+.dark-mode a:focus {
+    color: #9ec5fe;
+}
