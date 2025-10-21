@@ -1,0 +1,443 @@
+/* ==========================================================================
+   NAVEGAÇÃO SOFISTICADA E INTERATIVA
+   ========================================================================== */
+
+/* ==========================================================================
+   HEADER E NAVEGAÇÃO PRINCIPAL
+   ========================================================================== */
+
+header {
+  background-color: white;
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-4) 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: var(--spacing-4);
+  padding-right: var(--spacing-4);
+}
+
+@media (min-width: 640px) {
+  nav {
+    padding-left: var(--spacing-6);
+    padding-right: var(--spacing-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  nav {
+    padding-left: var(--spacing-8);
+    padding-right: var(--spacing-8);
+  }
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  color: var(--color-primary-700);
+  text-decoration: none;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+}
+
+.logo h1 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary-700);
+  margin: 0;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .logo h1 {
+    font-size: var(--font-size-lg);
+  }
+}
+
+/* ==========================================================================
+   MENU PRINCIPAL DESKTOP
+   ========================================================================== */
+
+.nav-menu {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: var(--spacing-8);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .nav-menu {
+    display: flex;
+  }
+}
+
+.nav-menu li {
+  margin: 0;
+  position: relative;
+}
+
+.nav-menu a {
+  display: block;
+  padding: var(--spacing-2) var(--spacing-4);
+  color: var(--color-neutral-700);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  border-radius: var(--border-radius-md);
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.nav-menu a:hover {
+  color: var(--color-primary-600);
+  background-color: var(--color-primary-50);
+  text-decoration: none;
+}
+
+.nav-menu a.active {
+  color: var(--color-primary-700);
+  background-color: var(--color-primary-100);
+  font-weight: var(--font-weight-semibold);
+}
+
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-primary-500);
+  transform: translateX(-50%);
+  transition: width var(--transition-fast);
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+  width: 80%;
+}
+
+/* ==========================================================================
+   DROPDOWN SUBMENU
+   ========================================================================== */
+
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  min-width: 200px;
+  box-shadow: var(--shadow-xl);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--color-neutral-200);
+  padding: var(--spacing-2);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all var(--transition-normal);
+  z-index: var(--z-dropdown);
+}
+
+.nav-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu li {
+  margin: 0;
+}
+
+.dropdown-menu a {
+  padding: var(--spacing-3) var(--spacing-4);
+  display: block;
+  color: var(--color-neutral-700);
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--spacing-1);
+}
+
+.dropdown-menu a:hover {
+  background-color: var(--color-primary-50);
+  color: var(--color-primary-700);
+}
+
+/* ==========================================================================
+   MENU HAMBÚRGUER MOBILE (CSS PURO)
+   ========================================================================== */
+
+/* Checkbox invisível para controlar o menu mobile */
+#mobile-menu-toggle {
+  display: none;
+}
+
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+.hamburger {
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-neutral-700);
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-neutral-700);
+  transition: all var(--transition-fast);
+}
+
+.hamburger::before {
+  top: -8px;
+}
+
+.hamburger::after {
+  top: 8px;
+}
+
+/* Animação do hambúrguer quando checkbox está marcado */
+#mobile-menu-toggle:checked ~ .nav-header .menu-toggle .hamburger {
+  background-color: transparent;
+}
+
+#mobile-menu-toggle:checked ~ .nav-header .menu-toggle .hamburger::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+#mobile-menu-toggle:checked ~ .nav-header .menu-toggle .hamburger::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+/* ==========================================================================
+   MENU MOBILE
+   ========================================================================== */
+
+.mobile-menu {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  z-index: var(--z-modal);
+  transform: translateX(-100%);
+  transition: transform var(--transition-normal);
+  overflow-y: auto;
+}
+
+/* Menu visível quando checkbox está marcado */
+#mobile-menu-toggle:checked ~ .mobile-menu {
+  transform: translateX(0);
+}
+
+@media (min-width: 768px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+
+.mobile-menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-4);
+  border-bottom: 1px solid var(--color-neutral-200);
+  background-color: var(--color-neutral-50);
+}
+
+.mobile-menu-close {
+  background: none;
+  border: none;
+  font-size: var(--font-size-2xl);
+  color: var(--color-neutral-600);
+  cursor: pointer;
+  padding: var(--spacing-2);
+  border-radius: var(--border-radius-md);
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-menu-close:hover {
+  background-color: var(--color-neutral-200);
+  color: var(--color-neutral-800);
+}
+
+.mobile-nav-menu {
+  list-style: none;
+  margin: 0;
+  padding: var(--spacing-4);
+}
+
+.mobile-nav-menu li {
+  margin-bottom: var(--spacing-2);
+}
+
+.mobile-nav-menu a {
+  display: block;
+  padding: var(--spacing-4);
+  color: var(--color-neutral-700);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  border-radius: var(--border-radius-lg);
+  transition: all var(--transition-fast);
+  border: 2px solid transparent;
+}
+
+.mobile-nav-menu a:hover {
+  color: var(--color-primary-700);
+  background-color: var(--color-primary-50);
+  border-color: var(--color-primary-200);
+  text-decoration: none;
+}
+
+.mobile-nav-menu a.active {
+  color: white;
+  background-color: var(--color-primary-500);
+  border-color: var(--color-primary-600);
+}
+
+/* ==========================================================================
+   BACKDROP PARA MENU MOBILE (CSS PURO)
+   ========================================================================== */
+
+.mobile-menu-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: var(--z-modal-backdrop);
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-normal);
+  pointer-events: none;
+}
+
+/* Backdrop visível quando checkbox está marcado */
+#mobile-menu-toggle:checked ~ .mobile-menu-backdrop {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* ==========================================================================
+   BREADCRUMB DE NAVEGAÇÃO
+   ========================================================================== */
+
+.breadcrumb {
+  background-color: var(--color-neutral-100);
+  padding: var(--spacing-3) 0;
+  border-bottom: 1px solid var(--color-neutral-200);
+}
+
+.breadcrumb-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-4);
+}
+
+.breadcrumb-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: var(--spacing-2);
+  flex-wrap: wrap;
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-size: var(--font-size-sm);
+}
+
+.breadcrumb-item a {
+  color: var(--color-primary-600);
+  text-decoration: none;
+}
+
+.breadcrumb-item a:hover {
+  color: var(--color-primary-700);
+  text-decoration: underline;
+}
+
+.breadcrumb-item:not(:last-child)::after {
+  content: '/';
+  color: var(--color-neutral-400);
+  margin-left: var(--spacing-2);
+}
+
+.breadcrumb-current {
+  color: var(--color-neutral-600);
+  font-weight: var(--font-weight-medium);
+}
+
+/* ==========================================================================
+   SKIP LINKS PARA ACESSIBILIDADE
+   ========================================================================== */
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: var(--spacing-4);
+  background-color: var(--color-primary-700);
+  color: white;
+  padding: var(--spacing-2) var(--spacing-4);
+  text-decoration: none;
+  border-radius: var(--border-radius-md);
+  font-weight: var(--font-weight-medium);
+  z-index: 9999;
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: var(--spacing-4);
+}
