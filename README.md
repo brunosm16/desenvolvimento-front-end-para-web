@@ -1,9 +1,11 @@
-# Experiência Prática II - Desenvolvimento Front-End Para Web ✅ COMPLETA
-## Instituto Esperança Solidária - Plataforma para ONGs
+# Experiência Prática III - Desenvolvimento Front-End Para Web ✅ COMPLETA
+## Instituto Esperança Solidária - Plataforma Interativa com JavaScript
+
+**Evolução do Projeto:** HTML5 → CSS3 → JavaScript Interativo
 
 ### 📋 Resumo da Entrega
 
-Este projeto atende às especificações da **Experiência Prática II**, focando na aplicação de CSS3 para transformar a estrutura HTML da Entrega I em uma interface visual profissional, responsiva e acessível.
+Este projeto representa a **Experiência Prática III COMPLETA**, implementando JavaScript para transformar a interface estática em uma aplicação web dinâmica e interativa, com manipulação do DOM, validação de formulários e funcionalidades que simulam uma aplicação real.
 
 ### 🎯 Objetivos Atendidos - Experiência Prática II
 
@@ -33,13 +35,20 @@ Este projeto atende às especificações da **Experiência Prática II**, focand
 - **Componentes de Feedback**: Alerts, badges, toasts implementados
 - **Sistema de Tags**: Para categorização visual
 
-### 📁 Estrutura Final Entregue - Experiência Prática II
+#### ✅ **JavaScript Interativo - Experiência Prática III**
+- **Manipulação DOM**: Criação e modificação dinâmica de elementos
+- **Validação de Formulários**: Sistema robusto com verificação em tempo real
+- **Eventos e Interatividade**: Click handlers, smooth scroll, feedback visual
+- **Funcionalidades UX**: Botão voltar ao topo, máscaras de input automáticas
+- **Código Modular**: Organizado por funcionalidade em arquivos separados
+
+### 📁 Estrutura Final Entregue - Experiência Prática III
 
 ```
 desenvolvimento-front-end-para-web/
-├── index.html              ✅ Página inicial com design responsivo
-├── projetos.html           ✅ Projetos com cards e layouts avançados
-├── cadastro.html           ✅ Formulário com design profissional
+├── index.html              ✅ Página inicial interativa com JavaScript
+├── projetos.html           ✅ Projetos com interatividade dinâmica
+├── cadastro.html           ✅ Formulário com validação JavaScript
 ├── assets/
 │   ├── css/                ✅ CSS MODULAR ORGANIZADO
 │   │   ├── style.css       ✅ CSS principal com imports
@@ -50,9 +59,14 @@ desenvolvimento-front-end-para-web/
 │   │   ├── layouts.css     ✅ Layouts específicos das páginas
 │   │   ├── footer.css      ✅ Footer e componentes finais
 │   │   └── README.md       ✅ Documentação técnica CSS
+│   ├── js/                 ✅ JAVASCRIPT MODULAR
+│   │   ├── main.js         ✅ Funcionalidades principais
+│   │   ├── form-validation.js ✅ Validação de formulários
+│   │   └── README.md       ✅ Documentação JavaScript
 │   └── images/
 │       └── README.md       ✅ Documentação das imagens
-└── README.md               ✅ Documentação completa atualizada
+├── CHANGELOG.md            ✅ Histórico de todas as práticas
+└── README.md               ✅ Documentação completa
 ```
 
 ### 📄 Páginas Implementadas
