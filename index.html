@@ -7,32 +7,70 @@
     <meta name="keywords" content="ONG, instituto, projetos sociais, voluntariado, doações, educação, comunidade">
     <meta name="author" content="Instituto Esperança Solidária">
     <title>Instituto Esperança Solidária - Transformando Vidas</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <header>
-        <nav>
+    <a href="#main" class="skip-link">Pular para o conteúdo principal</a>
+    
+        <header class="main-header">
+        <!-- Checkbox invisível para controle do menu mobile -->
+        <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-toggle-checkbox">
+        
+        <nav class="nav-container nav-header">
             <div class="logo">
                 <h1>Instituto Esperança Solidária</h1>
             </div>
+            
             <ul class="nav-menu">
-                <li><a href="index.html">Início</a></li>
+                <li><a href="index.html" class="active">Início</a></li>
+                <li class="nav-dropdown">
+                    <a href="projetos.html">Projetos</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="projetos.html#educacao">Educação</a></li>
+                        <li><a href="projetos.html#saude">Saúde</a></li>
+                        <li><a href="projetos.html#meio-ambiente">Meio Ambiente</a></li>
+                        <li><a href="projetos.html#assistencia-social">Assistência Social</a></li>
+                    </ul>
+                </li>
+                <li><a href="cadastro.html">Cadastre-se</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            
+            <label for="mobile-menu-toggle" class="menu-toggle" aria-label="Abrir menu de navegação">
+                <span class="hamburger"></span>
+            </label>
+        </nav>
+        
+        <div class="mobile-menu">
+            <div class="mobile-menu-header">
+                <div class="logo">
+                    <img src="assets/images/logo.png" alt="Logo Instituto Esperança Solidária">
+                    <h1>Instituto Esperança Solidária</h1>
+                </div>
+                <label for="mobile-menu-toggle" class="mobile-menu-close" aria-label="Fechar menu">×</label>
+            </div>
+            <ul class="mobile-nav-menu">
+                <li><a href="index.html" class="active">Início</a></li>
                 <li><a href="projetos.html">Projetos</a></li>
                 <li><a href="cadastro.html">Cadastre-se</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
-        </nav>
+        </div>
+        
+        <div class="mobile-menu-backdrop"></div>
     </header>
 
-    <main>
+    <main id="main">
         <section class="hero">
             <div class="hero-content">
-                <h1>Transformando Vidas, Construindo Futuros</h1>
-                <p>Há mais de 15 anos dedicados a promover mudanças positivas em comunidades carentes através de educação, saúde e desenvolvimento social.</p>
-                <div class="hero-actions">
-                    <a href="projetos.html" class="btn btn-primary">Conheça Nossos Projetos</a>
-                    <a href="cadastro.html" class="btn btn-secondary">Seja Voluntário</a>
+                <div>
+                    <h1>Transformando Vidas, Construindo Futuros</h1>
+                    <p>Há mais de 15 anos dedicados a promover mudanças positivas em comunidades carentes através de educação, saúde e desenvolvimento social.</p>
+                    <div class="hero-actions">
+                        <a href="projetos.html" class="btn btn-primary btn-lg">Conheça Nossos Projetos</a>
+                        <a href="cadastro.html" class="btn btn-secondary btn-lg">Seja Voluntário</a>
+                    </div>
                 </div>
-            </div>
         </section>
 
         <section class="sobre">
@@ -144,7 +182,7 @@
     <footer id="contato">
         <div class="container">
             <section class="contato-info">
-                <h2>Entre em Contato</h2>
+                <h2 class="contato-info-header">Entre em Contato</h2>
                 <div class="contato-grid">
                     <div class="contato-item">
                         <h3>Endereço</h3>
@@ -187,7 +225,7 @@
             </section>
             
             <section class="redes-sociais">
-                <h3>Siga-nos nas Redes Sociais</h3>
+                <h3 class="redes-sociais-header">Siga-nos nas Redes Sociais</h3>
                 <div class="social-links">
                     <a href="https://facebook.com/esperancasolidaria" target="_blank" rel="noopener noreferrer" aria-label="Facebook do Instituto">Facebook</a>
                     <a href="https://instagram.com/esperancasolidaria" target="_blank" rel="noopener noreferrer" aria-label="Instagram do Instituto">Instagram</a>
@@ -202,5 +240,6 @@
             </div>
         </div>
     </footer>
+    
 </body>
 </html>

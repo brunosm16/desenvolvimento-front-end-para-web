@@ -1,0 +1,528 @@
+/* ==========================================================================
+   LAYOUTS ESPECÍFICOS DAS PÁGINAS
+   ========================================================================== */
+
+/* ==========================================================================
+   LAYOUT GERAL DA PÁGINA
+   ========================================================================== */
+
+.page-layout {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "aside"
+    "footer";
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto auto;
+}
+
+@media (min-width: 1024px) {
+  .page-layout {
+    grid-template-areas:
+      "header header"
+      "main aside"
+      "footer footer";
+    grid-template-columns: 1fr 300px;
+    grid-template-rows: auto 1fr auto;
+  }
+}
+
+.page-header {
+  grid-area: header;
+}
+
+.page-main {
+  grid-area: main;
+  padding: var(--spacing-8) 0;
+}
+
+.page-aside {
+  grid-area: aside;
+  background-color: var(--color-neutral-100);
+  padding: var(--spacing-6);
+}
+
+.page-footer {
+  grid-area: footer;
+}
+
+/* ==========================================================================
+   PÁGINA INICIAL - HERO E SEÇÕES
+   ========================================================================== */
+
+.hero {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-600) 0%,
+    var(--color-secondary-600) 100%
+  );
+  color: white;
+  padding: var(--spacing-16) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('../images/hero-pattern.svg') no-repeat center center;
+  background-size: cover;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-4);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-8);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .hero-content {
+    grid-template-columns: 1fr 1fr;
+    padding: 0 var(--spacing-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-content {
+    padding: 0 var(--spacing-8);
+  }
+}
+
+.hero h1 {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-extrabold);
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--spacing-4);
+  color: var(--color-neutral-700);
+}
+
+@media (min-width: 768px) {
+  .hero h1 {
+    font-size: var(--font-size-5xl);
+  }
+}
+
+.hero p {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-6);
+  color: var(--color-neutral-700);
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+@media (min-width: 480px) {
+  .hero-actions {
+    flex-direction: row;
+  }
+}
+
+.hero-image {
+  position: relative;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius-2xl);
+  box-shadow: var(--shadow-2xl);
+}
+
+/* ==========================================================================
+   SEÇÕES PADRÃO
+   ========================================================================== */
+
+section {
+  padding: var(--spacing-16) 0;
+}
+
+section:nth-child(even) {
+  background-color: var(--color-neutral-100);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: var(--spacing-12);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-header h2 {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--spacing-4);
+  color: var(--color-neutral-900);
+}
+
+.section-header .subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-neutral-600);
+  line-height: var(--line-height-relaxed);
+}
+
+/* ==========================================================================
+   GRID DE ESTATÍSTICAS/IMPACTO
+   ========================================================================== */
+
+.estatisticas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-8);
+  margin: var(--spacing-12) 0;
+}
+
+.stat-item {
+  text-align: center;
+  padding: var(--spacing-8);
+  background-color: white;
+  border-radius: var(--border-radius-xl);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-normal);
+}
+
+.stat-item:hover {
+  transform: translateY(-4px);
+}
+
+.stat-item h3 {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-primary-600);
+  margin-bottom: var(--spacing-2);
+}
+
+.stat-item p {
+  font-size: var(--font-size-base);
+  color: var(--color-neutral-600);
+  font-weight: var(--font-weight-medium);
+  margin: 0;
+}
+
+/* ==========================================================================
+   GRID DE EQUIPE
+   ========================================================================== */
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-8);
+}
+
+.team-member {
+  background-color: white;
+  border-radius: var(--border-radius-xl);
+  padding: var(--spacing-6);
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+}
+
+.team-member:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.team-member img {
+  width: 120px;
+  height: 120px;
+  border-radius: var(--border-radius-full);
+  object-fit: cover;
+  margin: 0 auto var(--spacing-4);
+  border: 4px solid var(--color-primary-200);
+}
+
+.team-member h3 {
+  color: var(--color-neutral-800);
+  margin-bottom: var(--spacing-2);
+}
+
+.team-member .role {
+  color: var(--color-primary-600);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--spacing-3);
+}
+
+/* ==========================================================================
+   PÁGINA DE PROJETOS - LAYOUT ESPECÍFICO
+   ========================================================================== */
+
+.page-header {
+  background: linear-gradient(
+    45deg,
+    var(--color-primary-500) 0%,
+    var(--color-secondary-500) 100%
+  );
+  color: white;
+  padding: var(--spacing-16) 0;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: var(--font-size-4xl);
+  margin-bottom: var(--spacing-4);
+  color: white;
+}
+
+.page-header p {
+  font-size: var(--font-size-lg);
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto var(--spacing-6);
+}
+
+.page-header img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius-xl);
+  box-shadow: var(--shadow-2xl);
+  margin-top: var(--spacing-6);
+}
+
+/* Grid de Projetos */
+.projetos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--spacing-8);
+}
+
+@media (max-width: 400px) {
+  .projetos-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   ÁREAS DE VOLUNTARIADO
+   ========================================================================== */
+
+.areas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-6);
+}
+
+.area-card {
+  background-color: white;
+  padding: var(--spacing-6);
+  border-radius: var(--border-radius-lg);
+  border-left: 4px solid var(--color-secondary-500);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+}
+
+.area-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.area-card h4 {
+  color: var(--color-primary-700);
+  margin-bottom: var(--spacing-3);
+  font-size: var(--font-size-lg);
+}
+
+.area-card p {
+  color: var(--color-neutral-600);
+  margin-bottom: var(--spacing-4);
+  font-size: var(--font-size-sm);
+}
+
+.area-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.area-card li {
+  padding: var(--spacing-2) 0;
+  color: var(--color-neutral-700);
+  font-size: var(--font-size-sm);
+  border-bottom: 1px solid var(--color-neutral-200);
+}
+
+.area-card li:last-child {
+  border-bottom: none;
+}
+
+/* ==========================================================================
+   COMO PARTICIPAR - STEPS
+   ========================================================================== */
+
+.passos-voluntariado {
+  counter-reset: step-counter;
+  list-style: none;
+  padding: 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.passos-voluntariado li {
+  counter-increment: step-counter;
+  position: relative;
+  padding: var(--spacing-6);
+  margin-bottom: var(--spacing-6);
+  background-color: white;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  border-left: 4px solid var(--color-primary-500);
+}
+
+.passos-voluntariado li::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: -20px;
+  top: var(--spacing-6);
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-primary-500);
+  color: white;
+  border-radius: var(--border-radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
+}
+
+.passos-voluntariado h4 {
+  margin-bottom: var(--spacing-2);
+  color: var(--color-primary-700);
+}
+
+/* ==========================================================================
+   SEÇÃO DE DOAÇÕES
+   ========================================================================== */
+
+.pagamento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-6);
+}
+
+.pagamento-item {
+  background-color: white;
+  padding: var(--spacing-6);
+  border-radius: var(--border-radius-lg);
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+}
+
+.pagamento-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.pagamento-item h5 {
+  color: var(--color-primary-600);
+  margin-bottom: var(--spacing-4);
+  font-size: var(--font-size-lg);
+}
+
+.valores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-4);
+}
+
+.valor-card {
+  background: linear-gradient(135deg, var(--color-primary-500), var(--color-secondary-500));
+  color: white;
+  padding: var(--spacing-6);
+  border-radius: var(--border-radius-lg);
+  text-align: center;
+  transition: transform var(--transition-normal);
+}
+
+.valor-card:hover {
+  transform: scale(1.05);
+}
+
+.valor-card h5 {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-2);
+  color: white;
+}
+
+.valor-card p {
+  font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+/* ==========================================================================
+   CHAMADAS PARA AÇÃO
+   ========================================================================== */
+
+.chamada-acao,
+.chamada-final,
+.chamada-contato {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-600) 0%,
+    var(--color-secondary-600) 100%
+  );
+  color: white;
+  padding: var(--spacing-16) 0;
+  text-align: center;
+}
+
+.chamada-acao h2,
+.chamada-final h2,
+.chamada-contato h2 {
+  color: var(--color-neutral-900);
+  margin-bottom: var(--spacing-4);
+}
+
+.chamada-acao p,
+.chamada-final p,
+.chamada-contato p {
+  color: var(--color-neutral-900);
+  font-size: var(--font-size-lg);
+  max-width: 600px;
+  margin: 0 auto var(--spacing-8);
+}
+
+.acoes,
+.acoes-finais {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  align-items: center;
+}
+
+@media (min-width: 640px) {
+  .acoes,
+  .acoes-finais {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.contatos-rapidos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-4);
+  max-width: 800px;
+  margin: 0 auto;
+}
