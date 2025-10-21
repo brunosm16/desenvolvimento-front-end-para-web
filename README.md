@@ -80,7 +80,6 @@ desenvolvimento-front-end-para-web/
 - Labels associados aos inputs
 - ARIA attributes onde necessário
 - Títulos descritivos em campos de formulário
-- Navegação por teclado facilitada
 
 ### 📋 Checklist de Conformidade
 
@@ -102,13 +101,6 @@ desenvolvimento-front-end-para-web/
 - ✅ **Estrutura de pastas** organizada
 - ✅ **Arquivos HTML** prontos para validação W3C
 
-### 🚀 Próximas Etapas
-
-Este projeto está preparado para as próximas entregas da disciplina:
-- **Unidade 2**: Implementação de CSS3 e design responsivo
-- **Unidade 3**: JavaScript para interatividade
-- **Unidade 4**: Integração e otimização final
-
 ### 👥 Personas Atendidas
 
 O projeto contempla as personas definidas:
@@ -128,5 +120,5 @@ A plataforma desenvolvida simula uma solução real para o terceiro setor brasil
 ---
 
 **Desenvolvido para:** Disciplina de Desenvolvimento Front-End Para Web  
-**Foco:** Experiência Prática I - Fundamentos HTML5  
-**Data:** Outubro 2024
+**Foco:** Experiência Prática I - Fundamentos da Web e Estruturação de Interfaces
+**Data:** Outubro 2025
