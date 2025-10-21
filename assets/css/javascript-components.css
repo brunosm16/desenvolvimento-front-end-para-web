@@ -1,0 +1,250 @@
+/* ============================================================================
+   ESTILOS PARA VALIDAÇÃO DE FORMULÁRIOS - Experiência Prática III
+   ========================================================================== */
+
+/* Mensagens de status do formulário */
+.form-message {
+    padding: var(--spacing-4);
+    border-radius: var(--border-radius-md);
+    margin-bottom: var(--spacing-4);
+    font-weight: var(--font-weight-medium);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+}
+
+.form-message.success {
+    background-color: var(--color-success-50);
+    border: 1px solid var(--color-success-200);
+    color: var(--color-success-700);
+}
+
+.form-message.error {
+    background-color: var(--color-error-50);
+    border: 1px solid var(--color-error-200);
+    color: var(--color-error-700);
+}
+
+/* Estados dos campos de formulário */
+.form-field {
+    position: relative;
+    margin-bottom: var(--spacing-4);
+}
+
+/* Campo com erro */
+input.error,
+select.error,
+textarea.error {
+    border-color: var(--color-error-500) !important;
+    background-color: var(--color-error-50);
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+/* Campo com sucesso */
+input.success,
+select.success,
+textarea.success {
+    border-color: var(--color-success-500) !important;
+    background-color: var(--color-success-50);
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+}
+
+/* Mensagem de erro do campo */
+.field-error {
+    color: var(--color-error-600);
+    font-size: var(--font-size-sm);
+    margin-top: var(--spacing-1);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-1);
+}
+
+.field-error::before {
+    content: "⚠️";
+    font-size: var(--font-size-xs);
+}
+
+/* Modal simples */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.modal-content {
+    background: white;
+    border-radius: var(--border-radius-lg);
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow-2xl);
+    transform: scale(0.95);
+    transition: transform 0.2s ease;
+}
+
+.modal-header {
+    padding: var(--spacing-6);
+    border-bottom: 1px solid var(--color-neutral-200);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    margin: 0;
+    color: var(--color-neutral-800);
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: var(--font-size-2xl);
+    color: var(--color-neutral-500);
+    cursor: pointer;
+    padding: var(--spacing-2);
+    border-radius: var(--border-radius-md);
+    transition: all var(--transition-fast);
+}
+
+.modal-close:hover {
+    color: var(--color-neutral-700);
+    background-color: var(--color-neutral-100);
+}
+
+.modal-body {
+    padding: var(--spacing-6);
+}
+
+.modal-footer {
+    padding: var(--spacing-6);
+    border-top: 1px solid var(--color-neutral-200);
+    display: flex;
+    gap: var(--spacing-3);
+    justify-content: flex-end;
+}
+
+/* Botão voltar ao topo */
+.back-to-top-btn {
+    position: fixed;
+    bottom: var(--spacing-6);
+    right: var(--spacing-6);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--color-primary-500);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-lg);
+    font-weight: bold;
+    box-shadow: var(--shadow-lg);
+    transition: all var(--transition-fast);
+    z-index: 100;
+}
+
+.back-to-top-btn:hover {
+    background-color: var(--color-primary-600);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-xl);
+}
+
+/* Detalhes do projeto no modal */
+.project-details {
+    line-height: 1.6;
+}
+
+.project-details p {
+    margin-bottom: var(--spacing-3);
+}
+
+.project-details strong {
+    color: var(--color-neutral-700);
+}
+
+.project-actions-modal {
+    background-color: var(--color-primary-50);
+    padding: var(--spacing-4);
+    border-radius: var(--border-radius-md);
+    margin-top: var(--spacing-4);
+    border-left: 4px solid var(--color-primary-500);
+}
+
+/* Animações para elementos JavaScript */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.js-animate {
+    animation: fadeInUp 0.3s ease-out;
+}
+
+/* Estados de loading */
+.loading {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.loading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid var(--color-primary-200);
+    border-top-color: var(--color-primary-500);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsividade do modal */
+@media (max-width: 640px) {
+    .modal-content {
+        width: 95%;
+        margin: var(--spacing-4);
+    }
+    
+    .modal-header,
+    .modal-body,
+    .modal-footer {
+        padding: var(--spacing-4);
+    }
+    
+    .modal-footer {
+        flex-direction: column;
+    }
+    
+    .back-to-top-btn {
+        bottom: var(--spacing-4);
+        right: var(--spacing-4);
+        width: 45px;
+        height: 45px;
+    }
+}
