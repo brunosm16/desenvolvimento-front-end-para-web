@@ -1,0 +1,577 @@
+/* 
+ * CSS de Acessibilidade - WCAG 2.1 AA
+ * Experiência Prática IV
+ */
+
+/* Skip Link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #000;
+    color: #fff;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 1000;
+    border-radius: 4px;
+}
+
+.skip-link:focus {
+    top: 6px;
+}
+
+/* Controles de Acessibilidade */
+.accessibility-toolbar {
+    background: #f8f9fa;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #dee2e6;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.accessibility-toolbar button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.accessibility-toolbar button:hover,
+.accessibility-toolbar button:focus {
+    background: #0056b3;
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+/* Classe para leitores de tela */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Focus visível para navegação por teclado */
+*:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+a:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+/* Modo Escuro - Estilos mais específicos */
+body.dark-mode {
+    --color-neutral-50: #121212 !important;
+    --color-neutral-100: #1e1e1e !important;
+    --color-neutral-200: #2a2a2a !important;
+    --color-neutral-800: #e0e0e0 !important;
+    --color-neutral-900: #f0f0f0 !important;
+    
+    background-color: #121212 !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode *:not(.accessibility-toolbar button) {
+    color: inherit;
+}
+
+body.dark-mode .main-header,
+body.dark-mode header {
+    background-color: #1e1e1e !important;
+}
+
+body.dark-mode .nav-menu a,
+body.dark-mode nav a {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .nav-menu a:hover,
+body.dark-mode nav a:hover {
+    background-color: #333 !important;
+    color: #fff !important;
+}
+
+body.dark-mode .hero-section,
+body.dark-mode .hero,
+body.dark-mode .banner {
+    background: linear-gradient(135deg, #1e1e1e, #121212) !important;
+}
+
+body.dark-mode .hero::before {
+    background: rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .card,
+body.dark-mode .form-container,
+body.dark-mode .project-card,
+body.dark-mode .projeto-card {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+    border-color: #404040 !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .card-header,
+body.dark-mode .card-body,
+body.dark-mode .card-footer {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+    border-color: #404040 !important;
+}
+
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+    background-color: #2a2a2a !important;
+    color: #e0e0e0 !important;
+    border-color: #555 !important;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+    color: #aaa !important;
+}
+
+body.dark-mode .btn-primary {
+    background-color: #0d6efd !important;
+    border-color: #0d6efd !important;
+}
+
+body.dark-mode .btn-primary:hover {
+    background-color: #0b5ed7 !important;
+}
+
+body.dark-mode .btn,
+body.dark-mode button {
+    background-color: #0d6efd !important;
+    color: white !important;
+    border-color: #0d6efd !important;
+}
+
+body.dark-mode .btn-secondary {
+    background-color: #6c757d !important;
+    border-color: #6c757d !important;
+}
+
+body.dark-mode .btn-outline {
+    background-color: transparent !important;
+    color: #0d6efd !important;
+    border-color: #0d6efd !important;
+}
+
+body.dark-mode .btn-outline:hover {
+    background-color: #0d6efd !important;
+    color: white !important;
+}
+
+body.dark-mode .footer,
+body.dark-mode footer {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .accessibility-toolbar {
+    background-color: #1e1e1e !important;
+    border-color: #404040 !important;
+}
+
+/* Menu Mobile */
+body.dark-mode .mobile-menu {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .mobile-menu-header {
+    background-color: #1e1e1e !important;
+    border-color: #404040 !important;
+}
+
+body.dark-mode .mobile-nav-menu a {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .mobile-nav-menu a:hover {
+    background-color: #333 !important;
+}
+
+body.dark-mode .mobile-menu-backdrop {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Menu Toggle */
+body.dark-mode .menu-toggle,
+body.dark-mode .hamburger {
+    color: #e0e0e0 !important;
+}
+
+/* Logo */
+body.dark-mode .logo {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .logo h1 {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+    color: #fff !important;
+}
+
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode div {
+    color: #e0e0e0;
+}
+
+body.dark-mode .text-muted {
+    color: #aaa !important;
+}
+
+/* Seções específicas do site */
+body.dark-mode .hero-content,
+body.dark-mode .about-section,
+body.dark-mode .projects-section,
+body.dark-mode .form-section {
+    background-color: #121212 !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .section,
+body.dark-mode .about-section,
+body.dark-mode .projects-section,
+body.dark-mode .form-section,
+body.dark-mode .contact-section {
+    background-color: #121212 !important;
+}
+
+/* Elementos adicionais do modo escuro */
+body.dark-mode .section-header {
+    background-color: #121212 !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .container,
+body.dark-mode .wrapper {
+    background-color: #121212 !important;
+}
+
+body.dark-mode .grid,
+body.dark-mode .flex {
+    background-color: transparent !important;
+}
+
+body.dark-mode .border,
+body.dark-mode hr {
+    border-color: #404040 !important;
+}
+
+body.dark-mode .bg-light,
+body.dark-mode .bg-white {
+    background-color: #1e1e1e !important;
+}
+
+body.dark-mode .text-dark {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .shadow {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Regra mais abrangente para garantir cobertura completa */
+body.dark-mode section,
+body.dark-mode main,
+body.dark-mode article,
+body.dark-mode aside {
+    background-color: #121212 !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode div:not(.accessibility-toolbar button):not(.btn):not(button) {
+    color: inherit;
+}
+
+/* Garantir que elementos com fundo branco sejam alterados */
+body.dark-mode [style*="background-color: white"],
+body.dark-mode [style*="background-color: #fff"],
+body.dark-mode [style*="background-color: #ffffff"] {
+    background-color: #1e1e1e !important;
+}
+
+/* Elementos com classes comuns que têm fundo branco */
+body.dark-mode .white-bg,
+body.dark-mode .bg-white,
+body.dark-mode .background-white {
+    background-color: #1e1e1e !important;
+}
+
+/* Sobrescrever todos os elementos que definem fundo branco no CSS */
+body.dark-mode * {
+    --color-neutral-50: #121212 !important;
+    --color-neutral-100: #1e1e1e !important;
+    --color-neutral-200: #2a2a2a !important;
+    --color-neutral-300: #404040 !important;
+    --color-neutral-600: #e0e0e0 !important;
+    --color-neutral-700: #f0f0f0 !important;
+    --color-neutral-800: #f8f8f8 !important;
+    --color-neutral-900: #ffffff !important;
+}
+
+/* Forçar elementos específicos que podem ter fundo branco */
+body.dark-mode .info-processo,
+body.dark-mode .passos-processo,
+body.dark-mode .formulario-cadastro form,
+body.dark-mode .form-group,
+body.dark-mode .content-section {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+}
+
+/* Dropdown menus */
+body.dark-mode .dropdown-menu {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+    border-color: #404040 !important;
+}
+
+body.dark-mode .dropdown-menu a {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .dropdown-menu a:hover {
+    background-color: #333 !important;
+    color: #fff !important;
+}
+
+/* Seções específicas do cadastro */
+body.dark-mode .processo-cadastro {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .info-processo {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .passos-processo li {
+    background-color: #2a2a2a !important;
+    color: #e0e0e0 !important;
+    border: 1px solid #404040 !important;
+}
+
+body.dark-mode .passos-processo h3 {
+    color: #6ea8fe !important;
+}
+
+body.dark-mode .passos-processo p {
+    color: #e0e0e0 !important;
+}
+
+/* Formulário de cadastro */
+body.dark-mode .formulario-cadastro {
+    background-color: #121212 !important;
+    color: #e0e0e0 !important;
+}
+
+/* Lista ordenada e não ordenada */
+body.dark-mode ol,
+body.dark-mode ul {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode ol li,
+body.dark-mode ul li {
+    color: #e0e0e0 !important;
+}
+
+/* Artigos e seções de conteúdo */
+body.dark-mode article {
+    background-color: #121212 !important;
+    color: #e0e0e0 !important;
+}
+
+/* Garantir que todos os elementos de texto tenham cor clara */
+body.dark-mode h1,
+body.dark-mode h2, 
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6,
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode div,
+body.dark-mode li,
+body.dark-mode td,
+body.dark-mode th,
+body.dark-mode label {
+    color: #e0e0e0 !important;
+}
+
+/* Elementos que podem ter cores específicas de texto */
+body.dark-mode .text-primary {
+    color: #6ea8fe !important;
+}
+
+body.dark-mode .text-secondary {
+    color: #adb5bd !important;
+}
+
+body.dark-mode .text-success {
+    color: #75b798 !important;
+}
+
+body.dark-mode .text-warning {
+    color: #ffc107 !important;
+}
+
+body.dark-mode .text-danger {
+    color: #f5645f !important;
+}
+
+/* Alto Contraste */
+.high-contrast {
+    filter: contrast(150%) brightness(110%);
+}
+
+.high-contrast * {
+    text-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.high-contrast a {
+    text-decoration: underline !important;
+}
+
+.high-contrast button,
+.high-contrast .btn {
+    border: 2px solid #000 !important;
+}
+
+.high-contrast .card {
+    border: 2px solid #000 !important;
+}
+
+/* Melhorar contraste de cores (4.5:1 mínimo) */
+.text-muted {
+    color: #495057 !important; /* Contraste 4.5:1 */
+}
+
+.btn-secondary {
+    background-color: #495057;
+    border-color: #495057;
+}
+
+.btn-light {
+    background-color: #e9ecef;
+    border-color: #e9ecef;
+    color: #212529;
+}
+
+/* Indicadores de foco melhorados */
+.nav-menu a:focus,
+.dropdown-menu a:focus {
+    background: #007bff;
+    color: white;
+    outline: 2px solid #fff;
+    outline-offset: -2px;
+}
+
+/* Melhorar legibilidade dos formulários */
+label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+    font-size: 16px; /* Evita zoom no mobile */
+    line-height: 1.5;
+    padding: 8px 12px;
+}
+
+/* Estados de erro mais visíveis */
+.error {
+    color: #dc3545;
+    font-weight: 600;
+    border: 2px solid #dc3545 !important;
+}
+
+/* Melhorar visibilidade de placeholders */
+::placeholder {
+    color: #6c757d;
+    opacity: 1;
+}
+
+/* Responsive para controles de acessibilidade */
+@media (max-width: 768px) {
+    .accessibility-toolbar {
+        padding: 8px;
+    }
+    
+    .accessibility-toolbar button {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+}
+
+/* Animações respeitosas */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Melhor contraste para links */
+a {
+    color: #0d6efd;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    color: #0a58ca;
+    text-decoration: underline;
+}
+
+.dark-mode a {
+    color: #6ea8fe;
+}
+
+.dark-mode a:hover,
+.dark-mode a:focus {
+    color: #9ec5fe;
+}
