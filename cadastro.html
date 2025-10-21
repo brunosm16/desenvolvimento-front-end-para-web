@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cadastre-se como voluntário do Instituto Esperança Solidária e faça parte da transformação social">
+    <meta name="keywords" content="cadastro, voluntário, inscrição, Instituto Esperança Solidária, voluntariado">
+    <meta name="author" content="Instituto Esperança Solidária">
+    <title>Cadastro de Voluntário - Instituto Esperança Solidária</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Instituto Esperança Solidária</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="cadastro.html" class="active">Cadastre-se</a></li>
+                <li><a href="index.html#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Cadastro de Voluntário</h1>
+                <p>Junte-se a nós e seja parte da transformação social</p>
+            </div>
+        </section>
+
+        <section class="processo-cadastro">
+            <div class="container">
+                <article class="info-processo">
+                    <h2>Como Funciona o Processo</h2>
+                    <ol class="passos-processo">
+                        <li>
+                            <h3>1. Preencha o Formulário</h3>
+                            <p>Complete todas as informações solicitadas no formulário abaixo</p>
+                        </li>
+                        <li>
+                            <h3>2. Análise do Perfil</h3>
+                            <p>Nossa equipe analisará seu perfil e área de interesse</p>
+                        </li>
+                        <li>
+                            <h3>3. Contato Inicial</h3>
+                            <p>Entraremos em contato em até 5 dias úteis</p>
+                        </li>
+                        <li>
+                            <h3>4. Entrevista</h3>
+                            <p>Conversa para conhecer melhor suas expectativas</p>
+                        </li>
+                        <li>
+                            <h3>5. Capacitação</h3>
+                            <p>Treinamento específico para sua área de atuação</p>
+                        </li>
+                        <li>
+                            <h3>6. Início das Atividades</h3>
+                            <p>Comece a participar dos projetos sociais</p>
+                        </li>
+                    </ol>
+                    <figure>
+                        <figcaption>Etapas do processo de integração de voluntários</figcaption>
+                    </figure>
+                </article>
+            </div>
+        </section>
+
+        <section class="formulario-cadastro">
+            <div class="container">
+                <form id="cadastro-voluntario" action="#" method="post">
+                    <fieldset class="dados-pessoais">
+                        <legend>Dados Pessoais</legend>
+                        
+                        <div class="campo-grupo">
+                            <label for="nome-completo">Nome Completo *</label>
+                            <input 
+                                type="text" 
+                                id="nome-completo" 
+                                name="nome-completo" 
+                                required 
+                                minlength="3" 
+                                maxlength="100"
+                                placeholder="Digite seu nome completo"
+                                title="Informe seu nome completo como no documento de identidade"
+                                aria-describedby="nome-help">
+                            <small id="nome-help" class="help-text">Informe seu nome completo como no documento de identidade</small>
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label for="email">E-mail *</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                required 
+                                placeholder="seuemail@exemplo.com"
+                                title="Digite um e-mail válido"
+                                aria-describedby="email-help">
+                            <small id="email-help" class="help-text">Utilizaremos este e-mail para contato sobre oportunidades de voluntariado</small>
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label for="cpf">CPF *</label>
+                            <input 
+                                type="text" 
+                                id="cpf" 
+                                name="cpf" 
+                                required 
+                                pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}"
+                                placeholder="000.000.000-00"
+                                maxlength="14"
+                                title="Digite o CPF no formato 000.000.000-00"
+                                aria-describedby="cpf-help">
+                            <small id="cpf-help" class="help-text">Digite o CPF no formato 000.000.000-00</small>
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label for="telefone">Telefone *</label>
+                            <input 
+                                type="tel" 
+                                id="telefone" 
+                                name="telefone" 
+                                required 
+                                pattern="\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}"
+                                placeholder="(11) 99999-9999"
+                                maxlength="15"
+                                title="Digite o telefone no formato (11) 99999-9999"
+                                aria-describedby="telefone-help">
+                            <small id="telefone-help" class="help-text">Digite o telefone no formato (11) 99999-9999 - Preferencialmente WhatsApp</small>
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label for="data-nascimento">Data de Nascimento *</label>
+                            <input 
+                                type="date" 
+                                id="data-nascimento" 
+                                name="data-nascimento" 
+                                required 
+                                min="1924-01-01" 
+                                max="2006-12-31"
+                                title="Voluntários devem ter entre 18 e 100 anos"
+                                aria-describedby="data-help">
+                            <small id="data-help" class="help-text">Voluntários devem ter entre 18 e 100 anos</small>
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label for="genero">Gênero</label>
+                            <select id="genero" name="genero" aria-describedby="genero-help">
+                                <option value="">Selecione uma opção</option>
+                                <option value="feminino">Feminino</option>
+                                <option value="masculino">Masculino</option>
+                                <option value="nao-binario">Não-binário</option>
+                                <option value="prefiro-nao-informar">Prefiro não informar</option>
+                            </select>
+                            <small id="genero-help" class="help-text">Informação opcional para fins estatísticos</small>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="endereco">
+                        <legend>Endereço</legend>
+                        
+                        <div class="campo-grupo">
+                            <label for="cep">CEP *</label>
+                            <input 
+                                type="text" 
+                                id="cep" 
+                                name="cep" 
+                                required 
+                                pattern="[0-9]{5}-[0-9]{3}"
+                                placeholder="00000-000"
+                                maxlength="9"
+                                title="Digite o CEP no formato 00000-000"
+                                aria-describedby="cep-help">
+                            <small id="cep-help" class="help-text">Digite o CEP no formato 00000-000</small>
+                        </div>
+
+                        <div class="campos-linha">
+                            <div class="campo-grupo">
+                                <label for="endereco">Endereço *</label>
+                                <input 
+                                    type="text" 
+                                    id="endereco" 
+                                    name="endereco" 
+                                    required 
+                                    placeholder="Rua, Avenida, etc."
+                                    maxlength="100"
+                                    title="Digite o nome da rua, avenida, etc.">
+                            </div>
+
+                            <div class="campo-grupo">
+                                <label for="numero">Número *</label>
+                                <input 
+                                    type="text" 
+                                    id="numero" 
+                                    name="numero" 
+                                    required 
+                                    placeholder="123"
+                                    maxlength="10"
+                                    title="Digite o número do endereço">
+                            </div>
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label for="complemento">Complemento</label>
+                            <input 
+                                type="text" 
+                                id="complemento" 
+                                name="complemento" 
+                                placeholder="Apartamento, casa, etc."
+                                maxlength="50">
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label for="bairro">Bairro *</label>
+                            <input 
+                                type="text" 
+                                id="bairro" 
+                                name="bairro" 
+                                required 
+                                placeholder="Nome do bairro"
+                                maxlength="50"
+                                title="Digite o nome do bairro">
+                        </div>
+
+                        <div class="campos-linha">
+                            <div class="campo-grupo">
+                                <label for="cidade">Cidade *</label>
+                                <input 
+                                    type="text" 
+                                    id="cidade" 
+                                    name="cidade" 
+                                    required 
+                                    placeholder="Nome da cidade"
+                                    maxlength="50"
+                                    title="Digite o nome da cidade">
+                            </div>
+
+                            <div class="campo-grupo">
+                                <label for="estado">Estado *</label>
+                                <select id="estado" name="estado" required title="Selecione seu estado">
+                                    <option value="">Selecione</option>
+                                    <option value="AC">Acre</option>
+                                    <option value="AL">Alagoas</option>
+                                    <option value="AP">Amapá</option>
+                                    <option value="AM">Amazonas</option>
+                                    <option value="BA">Bahia</option>
+                                    <option value="CE">Ceará</option>
+                                    <option value="DF">Distrito Federal</option>
+                                    <option value="ES">Espírito Santo</option>
+                                    <option value="GO">Goiás</option>
+                                    <option value="MA">Maranhão</option>
+                                    <option value="MT">Mato Grosso</option>
+                                    <option value="MS">Mato Grosso do Sul</option>
+                                    <option value="MG">Minas Gerais</option>
+                                    <option value="PA">Pará</option>
+                                    <option value="PB">Paraíba</option>
+                                    <option value="PR">Paraná</option>
+                                    <option value="PE">Pernambuco</option>
+                                    <option value="PI">Piauí</option>
+                                    <option value="RJ">Rio de Janeiro</option>
+                                    <option value="RN">Rio Grande do Norte</option>
+                                    <option value="RS">Rio Grande do Sul</option>
+                                    <option value="RO">Rondônia</option>
+                                    <option value="RR">Roraima</option>
+                                    <option value="SC">Santa Catarina</option>
+                                    <option value="SP">São Paulo</option>
+                                    <option value="SE">Sergipe</option>
+                                    <option value="TO">Tocantins</option>
+                                </select>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="areas-interesse">
+                        <legend>Áreas de Interesse</legend>
+                        <p class="fieldset-description">Selecione as áreas em que gostaria de atuar como voluntário</p>
+                        
+                        <div class="checkbox-grupo">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="educacao" name="areas-interesse" value="educacao">
+                                <label for="educacao">
+                                    <strong>Educação</strong>
+                                    <span>Reforço escolar, oficinas educativas, contação de histórias</span>
+                                </label>
+                            </div>
+
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="saude" name="areas-interesse" value="saude">
+                                <label for="saude">
+                                    <strong>Saúde</strong>
+                                    <span>Atendimento médico, campanhas preventivas, orientações</span>
+                                </label>
+                            </div>
+
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="capacitacao" name="areas-interesse" value="capacitacao">
+                                <label for="capacitacao">
+                                    <strong>Capacitação Profissional</strong>
+                                    <span>Cursos técnicos, orientação profissional, mentoria</span>
+                                </label>
+                            </div>
+
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="meio-ambiente" name="areas-interesse" value="meio-ambiente">
+                                <label for="meio-ambiente">
+                                    <strong>Meio Ambiente</strong>
+                                    <span>Educação ambiental, plantio, reciclagem</span>
+                                </label>
+                            </div>
+
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="gestao" name="areas-interesse" value="gestao">
+                                <label for="gestao">
+                                    <strong>Gestão e Apoio</strong>
+                                    <span>Administração, comunicação, captação de recursos</span>
+                                </label>
+                            </div>
+
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="eventos" name="areas-interesse" value="eventos">
+                                <label for="eventos">
+                                    <strong>Eventos e Atividades</strong>
+                                    <span>Organização de eventos, atividades recreativas</span>
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="experiencia-profissional">
+                        <legend>Experiência e Formação</legend>
+                        
+                        <div class="campo-grupo">
+                            <label for="escolaridade">Escolaridade *</label>
+                            <select id="escolaridade" name="escolaridade" required title="Selecione sua escolaridade" aria-describedby="escolaridade-help">
+                                <option value="">Selecione sua escolaridade</option>
+                                <option value="fundamental-incompleto">Ensino Fundamental Incompleto</option>
+                                <option value="fundamental-completo">Ensino Fundamental Completo</option>
+                                <option value="medio-incompleto">Ensino Médio Incompleto</option>
+                                <option value="medio-completo">Ensino Médio Completo</option>
+                                <option value="tecnico">Curso Técnico</option>
+                                <option value="superior-incompleto">Ensino Superior Incompleto</option>
+                                <option value="superior-completo">Ensino Superior Completo</option>
+                                <option value="pos-graduacao">Pós-graduação</option>
+                                <option value="mestrado">Mestrado</option>
+                                <option value="doutorado">Doutorado</option>
+                            </select>
+                            <small id="escolaridade-help" class="help-text">Sua formação nos ajuda a identificar as melhores oportunidades</small>
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label for="profissao">Profissão/Área de Atuação</label>
+                            <input 
+                                type="text" 
+                                id="profissao" 
+                                name="profissao" 
+                                placeholder="Ex: Professor, Médico, Estudante, etc."
+                                maxlength="50"
+                                aria-describedby="profissao-help">
+                            <small id="profissao-help" class="help-text">Informação opcional que nos ajuda a adequar as atividades ao seu perfil</small>
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label for="experiencia-voluntariado">Experiência anterior com voluntariado</label>
+                            <textarea 
+                                id="experiencia-voluntariado" 
+                                name="experiencia-voluntariado" 
+                                rows="4" 
+                                placeholder="Descreva brevemente suas experiências anteriores com trabalho voluntário (se houver)"
+                                maxlength="500"
+                                aria-describedby="experiencia-help"></textarea>
+                            <small id="experiencia-help" class="help-text">Máximo 500 caracteres. Campo opcional.</small>
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label for="habilidades">Habilidades e Competências</label>
+                            <textarea 
+                                id="habilidades" 
+                                name="habilidades" 
+                                rows="4" 
+                                placeholder="Descreva suas principais habilidades, conhecimentos técnicos, idiomas, etc."
+                                maxlength="500"
+                                aria-describedby="habilidades-help"></textarea>
+                            <small id="habilidades-help" class="help-text">Máximo 500 caracteres. Informação opcional.</small>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="disponibilidade">
+                        <legend>Disponibilidade</legend>
+                        
+                        <div class="campo-grupo">
+                            <label for="disponibilidade-periodo">Período de Disponibilidade *</label>
+                            <select id="disponibilidade-periodo" name="disponibilidade-periodo" required title="Selecione seu período disponível">
+                                <option value="">Selecione seu período disponível</option>
+                                <option value="manha">Manhã (8h às 12h)</option>
+                                <option value="tarde">Tarde (12h às 18h)</option>
+                                <option value="noite">Noite (18h às 22h)</option>
+                                <option value="manha-tarde">Manhã e Tarde</option>
+                                <option value="manha-noite">Manhã e Noite</option>
+                                <option value="tarde-noite">Tarde e Noite</option>
+                                <option value="qualquer">Qualquer horário</option>
+                            </select>
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label>Dias da Semana Disponíveis *</label>
+                            <div class="checkbox-grupo dias-semana">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="segunda" name="dias-disponiveis" value="segunda" required title="Selecione pelo menos um dia da semana">
+                                    <label for="segunda">Segunda-feira</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="terca" name="dias-disponiveis" value="terca">
+                                    <label for="terca">Terça-feira</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="quarta" name="dias-disponiveis" value="quarta">
+                                    <label for="quarta">Quarta-feira</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="quinta" name="dias-disponiveis" value="quinta">
+                                    <label for="quinta">Quinta-feira</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="sexta" name="dias-disponiveis" value="sexta">
+                                    <label for="sexta">Sexta-feira</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="sabado" name="dias-disponiveis" value="sabado">
+                                    <label for="sabado">Sábado</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="domingo" name="dias-disponiveis" value="domingo">
+                                    <label for="domingo">Domingo</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label for="frequencia">Frequência de Participação *</label>
+                            <select id="frequencia" name="frequencia" required title="Selecione a frequência de participação">
+                                <option value="">Selecione a frequência</option>
+                                <option value="semanal">Semanal</option>
+                                <option value="quinzenal">Quinzenal</option>
+                                <option value="mensal">Mensal</option>
+                                <option value="eventual">Eventual/Pontual</option>
+                                <option value="eventos">Apenas em eventos especiais</option>
+                            </select>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="motivacao">
+                        <legend>Motivação e Expectativas</legend>
+                        
+                        <div class="campo-grupo">
+                            <label for="motivacao-voluntariado">Por que deseja ser voluntário? *</label>
+                            <textarea 
+                                id="motivacao-voluntariado" 
+                                name="motivacao-voluntariado" 
+                                rows="5" 
+                                required 
+                                placeholder="Conte-nos sobre sua motivação para se tornar voluntário do Instituto..."
+                                maxlength="1000"
+                                title="Conte-nos sobre sua motivação para se tornar voluntário"
+                                aria-describedby="motivacao-help"></textarea>
+                            <small id="motivacao-help" class="help-text">Máximo 1000 caracteres. Sua resposta nos ajuda a conhecer melhor seu perfil.</small>
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label for="expectativas">Expectativas em relação ao voluntariado</label>
+                            <textarea 
+                                id="expectativas" 
+                                name="expectativas" 
+                                rows="4" 
+                                placeholder="Quais são suas expectativas e objetivos com o trabalho voluntário?"
+                                maxlength="500"
+                                aria-describedby="expectativas-help"></textarea>
+                            <small id="expectativas-help" class="help-text">Máximo 500 caracteres. Campo opcional.</small>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="termos-condicoes">
+                        <legend>Termos e Condições</legend>
+                        
+                        <div class="checkbox-item termos">
+                            <input type="checkbox" id="aceito-termos" name="aceito-termos" required title="É obrigatório aceitar os termos e condições">
+                            <label for="aceito-termos">
+                                Declaro que li e aceito os <a href="documentos/termos-voluntariado.pdf" target="_blank">termos e condições para voluntários</a> *
+                            </label>
+                        </div>
+
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="aceito-comunicacao" name="aceito-comunicacao">
+                            <label for="aceito-comunicacao">
+                                Autorizo o recebimento de comunicações sobre oportunidades de voluntariado e atividades do Instituto
+                            </label>
+                        </div>
+
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="aceito-imagem" name="aceito-imagem">
+                            <label for="aceito-imagem">
+                                Autorizo o uso de minha imagem em materiais de divulgação do Instituto (fotos, vídeos, etc.)
+                            </label>
+                        </div>
+
+                        <figure class="info-lgpd">
+                            <figcaption>
+                                Seus dados são protegidos conforme a Lei Geral de Proteção de Dados (LGPD). 
+                            </figcaption>
+                        </figure>
+                    </fieldset>
+
+                    <div class="acoes-formulario">
+                        <button type="reset" class="btn btn-secondary">Limpar Formulário</button>
+                        <button type="submit" class="btn btn-primary">Enviar Cadastro</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="pos-cadastro">
+            <div class="container">
+                <article class="proximos-passos">
+                    <h2>Próximos Passos</h2>
+                    <p>Após o envio do seu cadastro:</p>
+                    <ol>
+                        <li><strong>Confirmação:</strong> Você receberá um e-mail de confirmação do recebimento</li>
+                        <li><strong>Análise:</strong> Nossa equipe analisará seu perfil (até 5 dias úteis)</li>
+                        <li><strong>Contato:</strong> Entraremos em contato para agendar uma conversa</li>
+                        <li><strong>Entrevista:</strong> Conheceremos melhor suas expectativas e disponibilidade</li>
+                        <li><strong>Capacitação:</strong> Participará de treinamento específico</li>
+                        <li><strong>Início:</strong> Começará a atuar nos projetos escolhidos</li>
+                    </ol>
+                    <figure>
+                        <figcaption>A jornada do voluntário no Instituto Esperança Solidária</figcaption>
+                    </figure>
+                </article>
+
+                <article class="duvidas-frequentes">
+                    <h2>Dúvidas Frequentes</h2>
+                    <details>
+                        <summary>Preciso ter experiência anterior para ser voluntário?</summary>
+                        <p>Não é necessário ter experiência anterior. Oferecemos capacitação completa para todas as áreas de atuação.</p>
+                    </details>
+                    <details>
+                        <summary>Qual é o tempo mínimo de compromisso?</summary>
+                        <p>Recomendamos um compromisso mínimo de 6 meses para melhor aproveitamento e continuidade dos projetos.</p>
+                    </details>
+                    <details>
+                        <summary>Posso escolher mais de uma área de atuação?</summary>
+                        <p>Sim! Você pode atuar em múltiplas áreas conforme sua disponibilidade e interesse.</p>
+                    </details>
+                    <details>
+                        <summary>O trabalho voluntário oferece certificado?</summary>
+                        <p>Sim, emitimos certificados de participação que podem ser utilizados como horas complementares.</p>
+                    </details>
+                    <details>
+                        <summary>Como posso alterar minha disponibilidade depois?</summary>
+                        <p>Você pode atualizar sua disponibilidade a qualquer momento entrando em contato conosco.</p>
+                    </details>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <aside class="chamada-contato">
+        <div class="container">
+            <h2>Ainda tem dúvidas?</h2>
+            <p>Nossa equipe está pronta para ajudar você em qualquer etapa do processo</p>
+            <div class="contatos-rapidos">
+                <a href="tel:+551134567890" class="btn btn-primary">
+                    <span>Ligar Agora</span>
+                    <small>(11) 3456-7890</small>
+                </a>
+                <a href="mailto:voluntarios@esperancasolidaria.org.br" class="btn btn-secondary">
+                    <span>Enviar E-mail</span>
+                    <small>voluntarios@esperancasolidaria.org.br</small>
+                </a>
+                <a href="https://wa.me/5511987654321" class="btn btn-tertiary" target="_blank" rel="noopener">
+                    <span>WhatsApp</span>
+                    <small>(11) 98765-4321</small>
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Instituto Esperança Solidária</h3>
+                    <p>Transformando vidas há mais de 15 anos</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p>Tel: <a href="tel:+551134567890">(11) 3456-7890</a></p>
+                    <p>E-mail: <a href="mailto:contato@esperancasolidaria.org.br">contato@esperancasolidaria.org.br</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Instituto Esperança Solidária. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
